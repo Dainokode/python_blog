@@ -21,7 +21,7 @@ load_dotenv('.env')
 
 # App configuration
 app = Flask(__name__)
-app.config['SECRET_KEY'] = 'some key'
+app.config['SECRET_KEY'] = os.environ.get("SECRET_KEY_FLASK")
 file_path = os.path.abspath(os.getcwd())+"\\blog.db"
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///' + file_path
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = True
