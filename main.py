@@ -3,7 +3,6 @@ from flask import Flask, render_template, request, redirect, url_for, flash
 from werkzeug.security import generate_password_hash, check_password_hash
 from flask_ckeditor import CKEditor
 from flask_sqlalchemy import SQLAlchemy
-from sqlalchemy import Table, Column, Integer, ForeignKey
 from sqlalchemy.orm import relationship
 from sqlalchemy.ext.declarative import declarative_base
 from forms import ContactForm, RegisterForm, LoginForm, AddNewPost, CommentForm
@@ -22,12 +21,14 @@ load_dotenv('.env')
 # App configuration
 app = Flask(__name__)
 app.config['SECRET_KEY'] = os.environ.get("SECRET_KEY_FLASK")
-file_path = os.path.abspath(os.getcwd())+"\\blog.db"
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///' + file_path
-app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = True
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///blog.db'
+app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db = SQLAlchemy(app)
 ckeditor = CKEditor(app)
 Base = declarative_base()
+# login manager
+login_manager = LoginManager()
+login_manager.init_app(app)
 
 
 # Gravatar
@@ -87,10 +88,6 @@ class Comment(db.Model, Base):
 # db.create_all()
 ##############################
 
-
-# login manager
-login_manager = LoginManager()
-login_manager.init_app(app)
 
 @login_manager.user_loader
 def load_user(user_id):
