@@ -10,7 +10,7 @@ from flask_login import UserMixin, login_user, LoginManager, current_user, logou
 from datetime import datetime
 from flask_gravatar import Gravatar
 from dotenv import load_dotenv
-import smtplib
+# import smtplib
 import os
 
 
@@ -118,10 +118,11 @@ def home():
     return render_template("index.html", year=year, blog_data=blog_data, current_user=current_user)
 
 
-@app.route('/contact')
-def contact():
-    form = ContactForm()
-    return render_template("contact.html", form=form, current_user=current_user)
+# Can't use it with heroku
+# @app.route('/contact')
+# def contact():
+#     form = ContactForm()
+#     return render_template("contact.html", form=form, current_user=current_user)
 
 
 @app.route('/register', methods=['GET', 'POST'])
@@ -196,36 +197,36 @@ def post(post_id):
     return render_template("post.html", article=requested_post, current_user=current_user, form=form, comments=comments)
     
 
-
-@app.route('/contact', methods=['GET', 'POST'])
-def receive_data():
-    form = ContactForm()
-    my_email = os.environ.get("MY_EMAIL")
-    password = os.environ.get("MY_EMAIL_PASSWORD")
-    receiver = os.environ.get("RECEIVER_EMAIL")
-    success_message = "Your message was successfully sent"
-    sender_username = request.form["username"]
-    sender_email = request.form["email"]
-    sender_phone = request.form["phone"]
-    sender_message = request.form["message"]
-    message = f'Name {sender_username}\nEmail: {sender_email}\nPhone {sender_phone}\nMessage: {sender_message}'
-    if form.validate_on_submit():
-        with smtplib.SMTP("smtp.gmail.com") as connection:
-            connection.starttls()
-            connection.login(user=my_email, password=password)
-            fmt = 'From: {}\r\nTo: {}\r\nSubject: {}\r\n{}'
-            connection.sendmail(
-                my_email,
-                receiver,
-                fmt.format(my_email, receiver, "New message", message).encode('utf-8')
-            )
-            # clear inputs
-            form.username.data = ""
-            form.email.data = ""
-            form.phone.data = ""
-            form.message.data = ""
-        return render_template("contact.html", form=form, success_message=success_message)
-    return render_template("contact.html", form=form)
+# Heroku does not allow smtp(need to pay)
+# @app.route('/contact', methods=['GET', 'POST'])
+# def receive_data():
+#     form = ContactForm()
+#     my_email = os.environ.get("MY_EMAIL")
+#     password = os.environ.get("MY_EMAIL_PASSWORD")
+#     receiver = os.environ.get("RECEIVER_EMAIL")
+#     success_message = "Your message was successfully sent"
+#     sender_username = request.form["username"]
+#     sender_email = request.form["email"]
+#     sender_phone = request.form["phone"]
+#     sender_message = request.form["message"]
+#     message = f'Name {sender_username}\nEmail: {sender_email}\nPhone {sender_phone}\nMessage: {sender_message}'
+#     if form.validate_on_submit():
+#         with smtplib.SMTP("smtp.gmail.com") as connection:
+#             connection.starttls()
+#             connection.login(user=my_email, password=password)
+#             fmt = 'From: {}\r\nTo: {}\r\nSubject: {}\r\n{}'
+#             connection.sendmail(
+#                 my_email,
+#                 receiver,
+#                 fmt.format(my_email, receiver, "New message", message).encode('utf-8')
+#             )
+#             # clear inputs
+#             form.username.data = ""
+#             form.email.data = ""
+#             form.phone.data = ""
+#             form.message.data = ""
+#         return render_template("contact.html", form=form, success_message=success_message)
+#     return render_template("contact.html", form=form)
 
 
 @app.route('/new-post', methods=['GET', 'POST'])
