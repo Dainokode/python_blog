@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Post</title>
+</head>
+<body>
+    {{ ckeditor.load() }}
+    {{ ckeditor.config(name='body') }}
+    {{ ckeditor.load(pkg_type="basic") }}
+    <!-- Header: nav -->
+    <header id="post-header" style="background: url({{article.img_url}}) no-repeat center center/cover;">   
+        {% include "header.html"%}
+        <div id="showcase">
+            <h2 class="title">{{article.title}}</h2>
+            <h3 class="subtitle">{{article.subtitle}}</h3>
+            <h4 class="author">Posted by {{article.author.name}} on {{article.date}}</h4>
+        </div>
+    </header>
+    <!-- article section -->
+    <article id="main-articles">
+        <div class="main-container">
+            <div class="post">
+                {{article.body|safe}}
+            </div>
+            {% if current_user.id == 1: %}
+                <a href="{{url_for('edit_post', post_id=article.id)}}">Edit Post</a>
+                <a href="{{url_for('delete_post', post_id=article.id)}}">Delete Post</a>
+            {% endif %}
+        </div>
+    </article>
+    <!-- Comments -->
+    <div class="comments">
+        <div class="main-container">
+            {% for comment in article.comments: %}
+                <div class="flex-div">
+                    <img src="{{ comment.comment_author.email | gravatar }}" alt="" class="avatar">
+                    <h2 class="author-name">{{ comment.comment_author.name }}</h2>
+                </div>
+                <p class="comment-text">{{ comment.comment|safe }}</p>
+                <div class="bottom-line"></div>
+            {% endfor %}
+        </div>
+    </div>
+    <!-- Comment form -->
+    {% if current_user.is_authenticated: %}
+        <form id="comment-form" action="{{url_for('post', post_id=article.id)}}" method="POST">
+            <div class="main-container">
+                {{ form.csrf_token }}
+                {{ form.comment.label }} {{ form.comment(size=20) }}
+                <button class="btn" type="submit">Comment</button>
+            </div>
+        </form>
+    {% else: %}
+    <div style="padding-bottom: 4rem; text-decoration: underline;" class="main-container">
+        <a class="login-anchor" href="{{url_for('login')}}">Login to comment</a>
+    </div>  
+    {% endif %}
+    {% include "footer.html"%}
+</body>
+</html>

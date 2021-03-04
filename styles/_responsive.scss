@@ -1,0 +1,685 @@
+/* Portrait and Landscape iphone 5's */
+@media only screen 
+  and (min-device-width: 320px) 
+  and (max-device-width: 568px)
+  and (-webkit-min-device-pixel-ratio: 2) {
+    //   headers
+    #login-header, #register-header, #contact-header {
+        height: 75vh;
+    }
+
+    //   post header
+    #post-header {
+        height: 70vh;
+    }
+
+    //   Navbar
+    .nav-container {
+        #navbar {
+            display: flex;
+            flex-direction: column;
+
+            #logo {
+                margin-bottom: 0.5rem;
+            }
+
+            .nav-list {
+                margin-left: 1.5rem;
+
+                a {
+                    font-size: 1rem;
+                    padding-right: 1.6rem;
+                    color: #fff;
+                    font-weight: bold;
+                
+                    &:hover {
+                        color: #e9a83f;
+                    }
+                }
+            }
+        }
+    }
+
+    // Showcase
+    #showcase {
+        margin-top: 30%;
+
+        #page-title {
+            font-size: 45px;
+        }
+
+        p {
+            font-size: 20px;
+            margin-top: 2rem;
+        }
+
+        .contact-paragraph {
+            font-size: 1.2rem;
+            text-align: center;
+            margin: 1.5rem auto;
+            width: 80%;
+        }
+    }
+
+    // Posts showcase
+    #showcase {
+        .title {
+            font-size: 2.2rem;
+        }
+
+        .subtitle {
+            font-size: 1.5rem;
+            line-height: 1.2;
+        }
+
+        .author {
+            font-size: 0.9rem;
+            line-height: 1.5;
+        }
+    }
+
+    // Main articles
+    #main-articles {
+        padding: 3rem;
+
+        .article {
+            .title {
+                font-size: 1.8rem;
+            }
+
+            .subtitle {
+                font-size: 1.2rem;
+                line-height: 1.2;
+            }
+
+            .author {
+                font-size: 0.8rem;
+                line-height: 1.5;
+            }
+        }
+
+        .post {
+            h1 {
+                font-size: 1.8rem;
+            }
+    
+            p {
+                font-size: 1rem;
+                line-height: 1.5;
+            }
+        }
+    }
+
+    // footer
+    #footer {
+        padding: 1.5rem;
+
+        h2 {
+            font-size: 1rem;
+            width: 100%;
+            line-height: 1.5;
+          }
+
+          .social-icons {
+            margin: 20px 0;
+        
+            i {
+              font-size: 25px;
+              border-radius: 50px;
+              margin-right: 10px;
+      
+              &:hover {
+                  opacity: 0.5;
+              }
+            }
+          }
+    }
+}
+
+/* Portrait and Landscape iphone 6 7 8*/
+@media only screen 
+  and (min-device-width: 375px) 
+  and (max-device-width: 667px) 
+  and (-webkit-min-device-pixel-ratio: 2) { 
+    //   post header
+    #post-header {
+        height: 70vh;
+    }
+
+     //   Navbar
+     .nav-container {
+        #navbar {
+            display: flex;
+            flex-direction: column;
+
+            #logo {
+                margin-bottom: 0.5rem;
+            }
+
+            .nav-list {
+                margin-left: 1.5rem;
+
+                a {
+                    font-size: 1rem;
+                    padding-right: 1.8rem;
+                    color: #fff;
+                    font-weight: bold;
+                
+                    &:hover {
+                        color: #e9a83f;
+                    }
+                }
+            }
+        }
+    }
+
+        // Posts showcase
+        #showcase {
+        .title {
+            font-size: 2.4rem;
+        }
+
+        .subtitle {
+            font-size: 1.6rem;
+            line-height: 1.2;
+        }
+
+        .author {
+            font-size: 1rem;
+            line-height: 1.5;
+        }
+    }
+
+
+    // Showcase
+    #showcase {
+        margin-top: 30%;
+
+        #page-title {
+            font-size: 45px;
+        }
+
+        p {
+            font-size: 25px;
+            margin-top: 2rem;
+        }
+    }
+
+    // Main articles
+    #main-articles {
+        padding: 3rem;
+
+        .article {
+            .title {
+                font-size: 1.8rem;
+            }
+
+            .subtitle {
+                font-size: 1.2rem;
+                line-height: 1.2;
+            }
+
+            .author {
+                font-size: 0.8rem;
+                line-height: 1.5;
+            }
+        }
+    }
+
+    // footer
+    #footer {
+        padding: 1.5rem;
+
+        h2 {
+            font-size: 1rem;
+            width: 100%;
+            line-height: 1.5;
+          }
+
+          .social-icons {
+            margin: 20px 0;
+        
+            i {
+              font-size: 25px;
+              border-radius: 50px;
+              margin-right: 10px;
+      
+              &:hover {
+                  opacity: 0.5;
+              }
+            }
+          }
+    }
+}
+
+/* Portrait and Landscape iphone +'s */
+@media only screen 
+  and (min-device-width: 414px) 
+  and (max-device-width: 736px) 
+  and (-webkit-min-device-pixel-ratio: 3) { 
+     //   Navbar
+     .nav-container {
+        #navbar {
+            display: flex;
+            flex-direction: column;
+
+            #logo {
+                margin-bottom: 0.5rem;
+                font-size: 1.8rem;
+            }
+
+            .nav-list {
+                margin-left: 1.5rem;
+                
+                a {
+                    font-size: 1.2rem;
+                    padding-right: 1.8rem;
+                    color: #fff;
+                    font-weight: bold;
+                
+                    &:hover {
+                        color: #e9a83f;
+                    }
+                }
+            }
+        }
+    }
+
+    // Showcase
+    #showcase {
+        margin-top: 30%;
+
+        #page-title {
+            font-size: 55px;
+        }
+
+        p {
+            font-size: 25px;
+            margin-top: 2rem;
+        }
+
+        .title {
+            font-size: 2.8rem;
+        }
+
+        .subtitle {
+            font-size: 1.6rem;
+            line-height: 1.2;
+        }
+
+        .author {
+            font-size: 1rem;
+            line-height: 1.5;
+        }
+    }
+
+    // Main articles
+    #main-articles {
+        padding: 3rem;
+
+        .article {
+            .title {
+                font-size: 2rem;
+            }
+
+            .subtitle {
+                font-size: 1.4rem;
+                line-height: 1.2;
+            }
+
+            .author {
+                font-size: 1rem;
+                line-height: 1.5;
+            }
+        }
+    }
+
+    // footer
+    #footer {
+        padding: 1.5rem;
+
+        h2 {
+            font-size: 1.2rem;
+            width: 100%;
+            line-height: 1.5;
+          }
+
+          .social-icons {
+            margin: 20px 0;
+        
+            i {
+              font-size: 25px;
+              border-radius: 50px;
+              margin-right: 10px;
+      
+              &:hover {
+                  opacity: 0.5;
+              }
+            }
+          }
+    }
+}
+
+/* Portrait and Landscape iphone x */
+@media only screen 
+  and (min-device-width: 375px) 
+  and (max-device-width: 812px) 
+  and (-webkit-min-device-pixel-ratio: 3) { 
+    //   header
+    header {
+        height: 75vh;
+    }
+
+    //   post header
+    #post-header {
+        height: 60vh;
+    }
+
+    //   headers
+    #login-header, #register-header, #contact-header {
+        height: 60vh;
+    }
+
+     //   Navbar
+     .nav-container {
+        #navbar {
+            display: flex;
+            flex-direction: column;
+
+            #logo {
+                margin-bottom: 0.5rem;
+            }
+
+            .nav-list {
+                margin-left: 1.5rem;
+
+                a {
+                    font-size: 1.1rem;
+                    padding-right: 1.8rem;
+                    color: #fff;
+                    font-weight: bold;
+                
+                    &:hover {
+                        color: #e9a83f;
+                    }
+                }
+            }
+        }
+    }
+
+    // Showcase
+    #showcase {
+        margin-top: 30%;
+
+        #page-title {
+            font-size: 45px;
+        }
+
+        p {
+            font-size: 22px;
+            margin-top: 2rem;
+        }
+    }
+
+    // Main articles
+    #main-articles {
+        padding: 3rem;
+
+        .article {
+            .title {
+                font-size: 2rem;
+            }
+
+            .subtitle {
+                font-size: 1.3rem;
+                line-height: 1.2;
+            }
+
+            .author {
+                font-size: 0.9rem;
+                line-height: 1.5;
+            }
+        }
+    }
+
+    // footer
+    #footer {
+        padding: 1.5rem;
+
+        h2 {
+            font-size: 1.1rem;
+            width: 100%;
+            line-height: 1.5;
+          }
+
+          .social-icons {
+            margin: 20px 0;
+        
+            i {
+              font-size: 25px;
+              border-radius: 50px;
+              margin-right: 10px;
+      
+              &:hover {
+                  opacity: 0.5;
+              }
+            }
+          }
+    }
+}
+
+// Ipads:
+/* Portrait and Landscape */
+@media only screen 
+  and (min-device-width: 768px) 
+  and (max-device-width: 1024px) 
+  and (-webkit-min-device-pixel-ratio: 1) {
+      //   Navbar
+     .nav-container {
+        #navbar {
+
+            #logo {
+                margin-bottom: 0.5rem;
+                font-size: 2rem;
+            }
+
+            .nav-list {
+                a {
+                    font-size: 1.8rem;
+                    padding-right: 1.8rem;
+                    color: #fff;
+                    font-weight: bold;
+                
+                    &:hover {
+                        color: #e9a83f;
+                    }
+                }
+            }
+        }
+    }
+
+    // Showcase
+    #showcase {
+        margin-top: 30%;
+
+        #page-title {
+            font-size: 75px;
+        }
+
+        p {
+            font-size: 30px;
+            margin-top: 2rem;
+        }
+
+       
+            .title {
+                font-size: 6rem;
+            }
+
+            .subtitle {
+                font-size: 3rem;
+                line-height: 1.2;
+            }
+
+            .author {
+                font-size: 1.8rem;
+                line-height: 1.5;
+            }
+        
+    }
+
+    // Main articles
+    #main-articles {
+        padding: 4rem;
+
+        .article {
+            .title {
+                font-size: 2.2rem;
+            }
+
+            .subtitle {
+                font-size: 1.6rem;
+                line-height: 1.2;
+            }
+
+            .author {
+                font-size: 1.2rem;
+                line-height: 1.5;
+            }
+        }
+    }
+    
+    // form
+    #contact-form, #new-post-form, #register-form, #login-form, #comment-form {
+        label {
+            font-size: 24px;
+        }
+    }
+
+    // footer
+    #footer {
+        padding: 2rem;
+
+        h2 {
+            font-size: 1.5rem;
+            width: 100%;
+            line-height: 1.5;
+          }
+
+          .social-icons {
+            margin: 20px 0;
+        
+            i {
+              font-size: 30px;
+              border-radius: 50px;
+              margin-right: 10px;
+      
+              &:hover {
+                  opacity: 0.5;
+              }
+            }
+          }
+    }
+}
+
+/* Portrait and Landscape */
+@media only screen 
+  and (min-device-width: 768px) 
+  and (max-device-width: 1024px) 
+  and (-webkit-min-device-pixel-ratio: 2) {
+    //   header
+    header {
+        height: 75vh;
+    }
+
+    //   Navbar
+    .nav-container {
+        #navbar {
+
+            #logo {
+                margin-bottom: 0.5rem;
+                font-size: 1.8rem;
+            }
+
+            .nav-list {
+                a {
+                    font-size: 1.6rem;
+                    padding-right: 1.8rem;
+                    color: #fff;
+                    font-weight: bold;
+                
+                    &:hover {
+                        color: #e9a83f;
+                    }
+                }
+            }
+        }
+    }
+
+    // Showcase
+    #showcase {
+        margin-top: 30%;
+
+        #page-title {
+            font-size: 85px;
+        }
+
+        p {
+            font-size: 35px;
+            margin-top: 2rem;
+        }
+    }
+
+    // Main articles
+    #main-articles {
+        padding: 4rem;
+
+        .article {
+            .title {
+                font-size: 3rem;
+            }
+
+            .subtitle {
+                font-size: 2.4rem;
+                line-height: 1.2;
+            }
+
+            .author {
+                font-size: 1.5rem;
+                line-height: 1.5;
+            }
+        }
+    }
+    
+    // form
+    #contact-form, #new-post-form, #register-form, #login-form, #comment-form {
+        label {
+            font-size: 28px;
+        }
+    }
+
+    // footer
+    #footer {
+        padding: 2rem;
+
+        h2 {
+            font-size: 1.8rem;
+            width: 100%;
+            line-height: 1.5;
+          }
+
+          .social-icons {
+            margin: 20px 0;
+        
+            i {
+              font-size: 35px;
+              border-radius: 50px;
+              margin-right: 10px;
+      
+              &:hover {
+                  opacity: 0.5;
+              }
+            }
+          }
+    }
+}

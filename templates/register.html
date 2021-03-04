@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+</head>
+<body>
+    <header id="register-header">
+        {% include "header.html" %} 
+        <div id="showcase">
+            <h1 id="page-title">
+                Register
+            </h1>
+        </div>
+    </header>
+    <form id="register-form" action="{{url_for('register')}}" method="POST">
+        <div class="main-container">
+            {{ form.csrf_token }}
+            {{ form.name.label }} {{ form.name(size=20) }}
+            {{ form.email.label }} {{ form.email(size=20) }}
+            {{ form.password.label }} {{ form.password(size=20) }}
+            <button class="btn" type="submit">Register</button>
+        </div>
+    </form>
+    {% include "footer.html" %}
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New Post</title>
+</head>
+<body>
+    {{ ckeditor.load() }}
+    {{ ckeditor.config(name='body') }}
+    {{ ckeditor.load(pkg_type="basic") }}
+    <header id="new-post-header">
+        {% include "header.html" %}
+        <div id="showcase">
+            <h1 id="page-title">
+                {% if is_edit: %}
+                    Edit Blog Post
+                {% else: %}
+                    New Blog Post
+                {% endif %}
+            </h1>
+            <p>Bring your ideas to life.</p>
+        </div>
+    </header>
+    {% if is_edit: %}
+        <form id="new-post-form" action="{{url_for('edit_post', post_id=post_id)}}" method="POST">
+    {% else: %}
+        <form id="new-post-form" action="{{url_for('add_new_post')}}" method="POST">
+    {% endif %}
+        <div class="main-container">
+            {{ form.csrf_token }}
+            {{ form.title.label }} {{ form.title(size=20) }}
+            {{ form.subtitle.label }} {{ form.subtitle(size=20) }}
+            {{ form.author.label }} {{ form.author(size=20) }}
+            {{ form.img_url.label }} {{ form.img_url(size=20) }}
+            {{ form.body.label }} {{ form.body(size=20) }}
+            <button class="btn" type="submit">Post</button>
+        </div>
+    </form>
+    {% include "footer.html" %}
+</body>
+</html>

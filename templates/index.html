@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<body>
+     <!-- Header: nav -->
+    <header id="main-header">   
+        {% include "header.html"%}
+        <div id="showcase">
+            <h1 id="page-title">
+                Welcome to my Blog
+            </h1>
+            <p>Info and insights about my developer journey</p>
+        </div>
+    </header>
+    <!-- article section -->
+    <article id="main-articles">
+        <div class="main-container">
+        {% with messages = get_flashed_messages() %}
+            {% if messages %}
+                {% for message in messages %}
+                    <p style="margin-bottom: 2rem;" class="success">{{ message }}</p>
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
+            <div class="article">
+                {% for article in blog_data %}
+                    <h2 class="title">{{article.title}}</h2>
+                    <h3 class="subtitle"><a href="{{ url_for('post', post_id=article.id) }}">{{article.subtitle}}</a></h3>
+                    <h4 class="author">Posted by Antonio Daino on {{article.date}}</h4>
+                    <div class="bottom-line"></div>
+                {% endfor %}
+            </div>
+        </div>
+    </article>
+   {% include "footer.html"%}
+</body>
+</html>
