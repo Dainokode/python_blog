@@ -64,7 +64,7 @@ class Post(db.Model, Base):
     id = db.Column(db.Integer, primary_key=True)
     title = db.Column(db.String(80), nullable=False)
     date = db.Column(db.String(120), nullable=False)
-    body = db.Column(db.String(1000), nullable=False)
+    body = db.Column(db.String(10000), nullable=False)
     author_id = db.Column(db.Integer, db.ForeignKey("users.id"))
     author = relationship("User", back_populates="posts")
     img_url = db.Column(db.String(280), nullable=False)
